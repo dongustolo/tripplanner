@@ -1,0 +1,85 @@
+#header, #header div {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+#header div {
+	flex: 1;
+	align-items:center;
+}
+
+#numberOfGuests	{
+	width:50px;
+}
+
+#fullMenu tr:first-child {
+	border-bottom: 1px solid #000;
+	border-top: 1px solid  #000;
+}
+
+#fullMenu tr > td:nth-child(odd) {
+	text-align: left;
+}
+
+#fullMenu tr > td:nth-child(even) {
+	text-align: right;
+}
+
+#view5 .dish-item {
+	min-height:210px;
+}
+
+#view5 .dish-item:last-child{
+	border-left: 1px solid  #000;
+}
+
+#printFullRecipe {
+	text-align: center;
+}
+
+.col-xs-12.dish-button {
+	background-color: #ccc;
+}
+
+#fullMenu span {
+    background-color: #ccc;
+    padding: 1px 4px;
+    border-radius: 45px;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.dish-image {
+	overflow-y: hidden;
+}
+
+#view3 .dish-image {
+	height: 100px;
+}
+
+.dish-title {
+	height: 100px;
+}
+
+.dish-button {
+	margin-bottom: 15px;
+}
+
+.dish-image > img {
+	width: 100%;
+	height: auto;
+}
+
+#status {
+	font-weight: bold;
+	font-size: 200%;
+	margin-top: 20px;
+	text-align: center;
+}
+
+#statusContainer {
+	height: 100px;
+}

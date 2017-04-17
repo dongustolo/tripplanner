@@ -1,0 +1,36 @@
+<div class="container">
+
+<ng-include src="'partials/header.html'"></ng-include>
+
+<ng-include src="'partials/status.html'">{{status}}</ng-include>
+
+<div id="view6" class="col-xs-12 view">
+
+				<div id="finalMenu" class="col-xs-12">
+					<div class="col-xs-6">
+						<h1 id="myDinnerCounter">
+							My Dinner:
+						</h1>
+					</div>
+					<div class="col-xs-6">
+						<a href="#!/search" class="btn btn-primary">Go back and edit dinner</a>
+					</div>
+				</div>
+				<div class="col-xs-12"></div>
+				<div id="preparation" class="col-xs-12">
+
+          <div class="col-sm-12 dish-item" ng-repeat="x in getMenu">
+      <div class="col-xs-4 dish-image"><img ng-src="{{x.image}}" /></div>'
+      <div class="col-xs-4 dish-title">
+      <h3>{{x.title}}</h3>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta metus placerat aliquam varius. Cras malesuada ullamcorper quam. Vivamus blandit massa mi, non finibus lacus mattis ac. Mauris in tellus at lorem fermentum aliquet. Nam feugiat tincidunt libero in vehicula. Fusce lobortis eget nibh eu posuere.
+      </div>
+      <div class="col-xs-4 dish-title">
+      <h3>Preparation</h2>{{x.instructions}}
+      </div>'
+    </div>
+
+        </div>
+</div>
+
+</div>
