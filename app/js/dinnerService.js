@@ -13,6 +13,18 @@ console.log($cookieStore.get('selectedDishesIds'));
 console.log(selectedDishes);
 console.log(selectedDishesIds);
 
+this.PlaceSearch2 = $resource('https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3/tips',{},{
+      get: {
+          headers: { }
+      }
+  });
+
+this.PlaceSearch = $resource('https://api.foursquare.com/v2/venues/search',{},{
+      get: {
+          headers: { }
+      }
+  });
+
 this.DishSearch = $resource('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search',{},{
       get: {
           headers: {
@@ -94,7 +106,7 @@ if ($cookieStore.get('selectedDishesIds')) {
             }
         }
         selectedDishesIds = [];
-				
+
     };
 
 
