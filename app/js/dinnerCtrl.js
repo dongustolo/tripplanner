@@ -13,6 +13,8 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
   };
 
   $scope.getMenu = Dinner.getDishesMenu();
+  
+  $scope.getActivities = Dinner.getActivitiesList();
 
   $scope.dishPrice = function(dish){
     return Dinner.getDishPrice(dish);

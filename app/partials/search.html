@@ -4,19 +4,12 @@
     <div class="container">
 
         <div class="row">
-
-            <div class="col-md-3">
-                <p class="lead">Shop Name</p>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3</a>
-                </div>
-            </div>
+			
+            <ng-include src="'partials/activities_sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
 
             <div class="col-md-9">
 
-                <div class="row carousel-holder">
+                <!-- <div class="row carousel-holder">
 
                     <div class="col-md-12">
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -45,7 +38,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> -->
 
                 <div class="row search-bar">
                   <div class="col-sm-12 col-lg-12 col-md-12">
@@ -94,4 +87,4 @@
 
 <ng-include src="'partials/footer.html'"></ng-include>
 
-Testeo: {{lugares.response.venues}}
+<!-- Testeo: {{lugares.response.venues}} -->

@@ -1,0 +1,23 @@
+<div class="col-md-3">
+                <p class="lead">Activities3</p>
+				<!-- {{getActivities}} -->
+                <div class="list-group">
+				
+					<table id="fullMenu">
+
+						<tbody>
+								 <tr ng-repeat="x in getActivities">
+									 <td>{{x.response.venue.name}}</td>
+
+									 <td><button ng-click="deleteDish(x.id)">x</button></td>
+
+								 </tr>
+						</tbody>
+					</table>
+				
+                    <!-- <a href="#" class="list-group-item">Activity 1</a>
+                    <a href="#" class="list-group-item">Activity 2</a>
+                    <a href="#" class="list-group-item">Activity 3</a> -->
+                </div>
+            </div>
+			<!-- {{getActivities}} -->

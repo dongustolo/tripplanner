@@ -17,6 +17,11 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
   $scope.confirmDish = function(dish){
     Dinner.addDishToMenu(dish);
   };
+  
+   $scope.addActivity = function(place){
+    Dinner.addActivitytoList(place);
+	console.log("entre");
+  };
 
   $scope.testeo  = Dinner.Dish.get({id:$routeParams.dishId});
 

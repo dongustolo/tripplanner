@@ -8,6 +8,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
   //var numberOfGuest = 2;
   var selectedDishes = [];
   var selectedDishesIds = [];
+  
+	var selectedPlaces = [];
+	var selectedPlacesIds = [];
 
 console.log($cookieStore.get('selectedDishesIds'));
 console.log(selectedDishes);
@@ -103,6 +106,10 @@ if ($cookieStore.get('selectedDishesIds')) {
     this.getDishesMenu = function(){
       return selectedDishes;
     }
+	
+	this.getActivitiesList = function(){
+      return selectedPlaces;
+    }
 
     //Removes dish from menu
     this.removeDishFromMenu = function(id) {
@@ -146,8 +153,23 @@ this.getAllIngredients = function(){
   // you will need to modify the model (getDish and getAllDishes)
   // a bit to take the advantage of Angular resource service
   // check lab 5 instructions for details
+    
+    
+	this.addActivitytoList = function(place) {
 
+		selectedPlaces.push(place);
+        console.log(selectedPlaces);
+/*         selectedDishesIds = [];
+		for (var j = 0; j < selectedDishes.length; j++) {
+			//console.log(selectedDishes[j]);
+			selectedDishesIds.push(selectedDishes[j].id);
+		}
+		$cookieStore.put('selectedDishesIds', selectedDishesIds); */
+        //console.log(selectedDishesIds);
+        //console.log($cookieStore.get('selectedDishesIds'));
 
+	};
+  
   this.addDishToMenu = function(dish) {
 
 				selectedDishes.push(dish);
