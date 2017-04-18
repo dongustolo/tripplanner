@@ -21,7 +21,16 @@ this.PlaceSearch2 = $resource('https://api.foursquare.com/v2/venues/40a55d80f964
 
 this.PlaceSearch = $resource('https://api.foursquare.com/v2/venues/search',{},{
       get: {
-          headers: { }
+          headers: { },
+          params:{ categoryId:'4bf58dd8d48988d1e2941735',limit:'12',near:'Rio de Janeiro',oauth_token:'MMQS314RF13CC5N0OO4W3CFJ0BQL24ZB10D1XZHZUTJBXOTV', v:'20170416'}
+      }
+  });
+
+this.PlaceId = $resource('https://api.foursquare.com/v2/venues/:id',{},{
+      get: {
+          headers: { },
+          params:{oauth_token:'MMQS314RF13CC5N0OO4W3CFJ0BQL24ZB10D1XZHZUTJBXOTV', v:'20170416'}
+
       }
   });
 

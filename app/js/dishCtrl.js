@@ -20,6 +20,8 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
 
   $scope.testeo  = Dinner.Dish.get({id:$routeParams.dishId});
 
+  $scope.place  = Dinner.PlaceId.get({id:$routeParams.dishId});
+
 
 
 

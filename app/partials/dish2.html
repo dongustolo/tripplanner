@@ -1,0 +1,64 @@
+<div class="container">
+
+<ng-include src="'partials/header.html'"></ng-include>
+
+<ng-include src="'partials/status.html'">{{status}}</ng-include>
+
+<!-- We include the sidebar as it is shared across two screens. -->
+<ng-include src="'partials/dinner-sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
+
+
+
+
+<div id="view4" class="col-sm-9 view">
+
+				<div class="col-sm-6">
+					<div class="col-xs-12">
+						<h1 id="dishDetailsTitle">{{testeo.title}}</h1>
+					</div>
+					<div class="col-xs-12">
+						<img id="dishDetailsImg" ng-src="{{testeo.image}}" />
+					</div>
+					<div id="dishDetailsDescription" class="col-xs-12">{{testeo.instructions}}	</div>
+					<div class="col-xs-12">
+						<!-- <button class="btn" id="backToSelect">back to Select Dish</button> -->
+						<a href="#!/search" class="btn btn-primary">back to Select Dish</a>
+
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="col-xs-12">
+						<h3>Ingredients for <span id="dishDetailsNumberOfPeople">{{getNumberOfGuests()}}</span> people</h3>
+					</div>
+					<div class="col-xs-12" id="dishDetailsIngredients">
+						<div class="col-xs-12">
+							<table id="dishDetailsIngredientsList">
+
+                <tr ng-repeat="x in testeo.extendedIngredients" >
+									<td>{{x.amount*getNumberOfGuests()}} {{x.unit}}</td>
+									<td>{{x.name}}</td>
+									<td>SEK</td>
+									<td>{{x.amount*getNumberOfGuests()}}</td>
+									</tr>
+
+							</table>
+						</div>
+						<div class="col-sm-6">
+							<!--<button class="btn" id="confirmDish">Confirm Dish</button> -->
+							<button ng-click="confirmDish(testeo)">Confirm Dish</button>
+
+						</div>
+						<!-- <div class="col-sm-6" id="dishPriceTotal">Precio total: {{getPrecioDish()}}</div> -->
+					</div>
+				</div>
+
+			</div>
+
+<!-- TODO in Lab 5: Display the dish information including image, Description,
+Instructions, Ingredients and total cost. -->
+
+</div>
+
+
+
+ <!-- {{testeo}} -->

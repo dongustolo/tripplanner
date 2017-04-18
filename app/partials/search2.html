@@ -1,0 +1,84 @@
+<div class="container">
+
+<ng-include src="'partials/header.html'"></ng-include>
+
+<ng-include src="'partials/status.html'">{{status}}</ng-include>
+
+<!-- We include the sidebar as it is shared across two screens. -->
+<ng-include src="'partials/dinner-sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
+
+<!-- TODO in Lab 5: Display the input box for search (you can ignore the type dropdown since BigOven does
+not support it in free version) and list all the dishes that match the search. -->
+
+<div id="view3" class="col-sm-9 view">
+				<div class="col-xs-12">
+					<div class="col-xs-12">
+						Select Dish
+					</div>
+					<div class="col-xs-12">
+						<div class="col-sm-6">
+							<!-- <input type="text" id="dishFilterInput" placeholder="Enter key words"> -->
+							<input type="text" id="dishFilterInput" ng-model="query" />
+							<!-- <button id="dishFilterButton">search</button> -->
+							<button id="dishFilterButton" ng-click="search(query, type)">Search</button>
+						</div>
+						<div class="col-sm-6">
+							<select name="dishType" id="dishType" ng-model="type" ng-change="search(query, type)">
+								<option value="main course">Main</option>
+								<option value="appetizer">Appetizer</option>
+								<option value="dessert">Dessert</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div id="dishesList" class="col-xs-12">
+
+						<!--Testeo: {{testeo2.results}} -->
+
+						<!-- <h1 ng-repeat="x in testeo2.results">{{x.title}}</h1> -->
+
+						<div class="col-sm-3 dish-item" data-id="{{x.id}}" ng-repeat="x in testeo2.results">
+							<div class="col-xs-12 dish-image">
+
+											<img ng-src="https://spoonacular.com/recipeImages/{{x.image}}" />
+							</div>
+							<div class="col-xs-12"><a ng-href="#!/dish/{{x.id}}">View more</a></div>
+							<div class="col-xs-12 dish-title">{{x.title}} </div>
+							<div class="col-xs-12 dish-button btn">Add Dish</div>
+						</div>
+
+				</div>
+			</div>
+
+			<div id="view3" class="col-sm-9 view">
+							<div class="col-xs-12">
+								<div class="col-xs-12">
+									Select Dish
+								</div>
+								<div class="col-xs-12">
+									<div class="col-sm-12">
+										<select name="dishType" id="dishType" ng-model="category" ng-change="searchPlaces(category)">
+											<option value="4bf58dd8d48988d1e2941735">Beaches</option>
+											<option value="4bf58dd8d48988d1fa931735">Hotels</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div id="dishesList" class="col-xs-12">
+
+									<div class="col-sm-3 dish-item" data-id="{{x.id}}" ng-repeat="x in lugares.response.venues">
+										<div class="col-xs-12 dish-image">
+
+														<img ng-src="https://spoonacular.com/recipeImages/{{x.image}}" />
+										</div>
+										<div class="col-xs-12"><a ng-href="#!/dish/{{x.id}}">View more</a></div>
+										<div class="col-xs-12 dish-title">{{x.name}} </div>
+										<div class="col-xs-12 dish-button btn">Add Dish</div>
+									</div>
+
+							</div>
+						</div>
+
+</div>
+
+Testeo: {{lugares.response.venues}}
