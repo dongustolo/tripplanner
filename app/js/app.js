@@ -49,7 +49,7 @@ dinnerPlannerApp.config(['$routeProvider',
         controller: 'DishCtrl'
       }).
       when('/menu', {
-        templateUrl: 'partials/menu.html',
+        templateUrl: 'partials/activities.html',
         controller: 'DinnerCtrl'
       }).
       when('/recipe', {
