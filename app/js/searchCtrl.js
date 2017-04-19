@@ -10,11 +10,12 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
 
   $scope.lugares = Dinner.PlaceSearch.get({});
 
-  $scope.searchPlaces = function(category) {
+  $scope.searchPlaces = function(query, category) {
    $scope.status = "Searching...";
-   Dinner.PlaceSearch.get({categoryId:category},function(data){
+   Dinner.PlaceSearch.get({query:query, categoryId:category},function(data){
      $scope.lugares=data;
      //$scope.status = "Showing " + data.results.length + " results";
+	 $scope.status = "";
    },function(data){
      $scope.status = "There was an error";
    });

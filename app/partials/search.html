@@ -44,13 +44,16 @@
                   <div class="col-sm-12 col-lg-12 col-md-12">
                     <div class="col-sm-6">
         							<input type="text" id="dishFilterInput" ng-model="query" />
-        							<button id="dishFilterButton" ng-click="search(query, type)">Search</button>
+        							<button id="dishFilterButton" ng-click="searchPlaces(query, category)">Search</button>
         						</div>
         						<div class="col-sm-6">
                       Categories:
-        							<select name="dishType" id="dishType" ng-model="category" ng-change="searchPlaces(category)">
-                        <option value="4bf58dd8d48988d1e2941735">Beaches</option>
-  											<option value="4bf58dd8d48988d1fa931735">Hotels</option>
+        							<select name="dishType" id="dishType" ng-model="category" ng-change="searchPlaces(query, category)">
+										<option value="4bf58dd8d48988d1e2941735">Beaches</option>
+										<option value="4bf58dd8d48988d1e5931735">Music Venues</option>
+										<option value="4bf58dd8d48988d181941735">Museums</option>
+										<option value="4bf58dd8d48988d1c4941735">Restaurants</option>
+										<option value="4d4b7105d754a06377d81259">Outdoors & Recreation</option>
         							</select>
         						</div>
                   </div>
@@ -59,7 +62,7 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4" data-id="{{x.id}}" ng-repeat="x in lugares.response.venues">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <!-- <img src="http://placehold.it/320x150" alt=""> -->
                             <div class="caption">
 
                                 <h4><a ng-href="#!/dish/{{x.id}}">{{x.name | limitTo:25}}</a>
