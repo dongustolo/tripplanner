@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('dinnerPlanner.home', ['ngRoute', 'firebase'])
+angular.module('webApp.home', ['ngRoute', 'firebase'])
 
 .config(['$routeProvider', function($routeProvider){
 	$routeProvider.when('/home', {
-		templateUrl: 'partials/home.html',
+		templateUrl: 'home/home.html',
 		controller: 'HomeCtrl'
 	});
 }])

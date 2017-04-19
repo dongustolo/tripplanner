@@ -1,31 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="dinnerPlanner">
-
-  <head>
-
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="">
-      <meta name="author" content="">
-
-      <title>Shop Homepage - Start Bootstrap Template</title>
-
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  	  <link rel="stylesheet" href="css/shop-homepage.css">
-      <!-- jQuery -->
-      <script src="bower_components/jquery/dist/jquery.js"></script>
-      <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
-      <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-      <!-- Angular JavaScript including routing and resource modules  -->
-      <script src="bower_components/angular/angular.js"></script>
-      <script src="bower_components/angular-route/angular-route.js"></script>
-      <script src="bower_components/angular-resource/angular-resource.js"></script>
-      <script src="bower_components/angular-cookies/angular-cookies.js"></script>	  
-	  <script src="bower_components/firebase/firebase.js"></script>
-	  <script type="text/javascript" src="bower_components/angularfire/dist/angularfire.js"></script>
-	  <script>
+<!--[if lt IE 7]>      <html lang="en" ng-app="webApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="webApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="webApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="webApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css"> 
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="css/shop-homepage.css">
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+  <script>
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyBFdxA9ZaVgmGIm4aL_NxkgN-ewGZ1Pohk",
@@ -35,29 +27,23 @@
     };
     firebase.initializeApp(config);
   </script>
+</head>
+<body>
 
-      <!-- The application JavaScript code -->
-      <script src="js/app.js"></script>
-      <script src="js/dinnerService.js"></script>
-      <script src="js/searchCtrl.js"></script>
-      <script src="js/dinnerCtrl.js"></script>
-      <script src="js/dishCtrl.js"></script>
-      <script src="js/home.js"></script>
+  <div ng-view></div>
 
-
-      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-      <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
-
-  </head>
-
-  <body>
-
-    <div ng-view></div>
-
-  </body>
-
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>  
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script type="text/javascript" src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="app.js"></script>  
+  <script type="text/javascript" src="js/tripModel.js"></script>
+  <script type="text/javascript" src="js/tripCtrl.js"></script>
+  <script type="text/javascript" src="js/placeCtrl.js"></script>
+  <script type="text/javascript" src="home/home.js"></script>
+  <script type="text/javascript" src="register/register.js"></script>
+  <script type="text/javascript" src="welcome/welcome.js"></script>
+  <script type="text/javascript" src="addPost/addPost.js"></script>
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+</body>
 </html>

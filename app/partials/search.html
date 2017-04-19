@@ -5,7 +5,7 @@
 
         <div class="row">
 			
-            <ng-include src="'partials/activities_sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
+            <ng-include src="'partials/activities_sidebar.html'" ng-controller="tripCtrl"></ng-include>
 
             <div class="col-md-9">
 
@@ -65,7 +65,7 @@
                             <!-- <img src="http://placehold.it/320x150" alt=""> -->
                             <div class="caption">
 
-                                <h4><a ng-href="#!/dish/{{x.id}}">{{x.name | limitTo:25}}</a>
+                                <h4><a ng-href="#!/place/{{x.id}}">{{x.name | limitTo:25}}</a>
                                 </h4>
                                 <p>{{x.location.address | limitTo:80}} </p>
                             </div>
