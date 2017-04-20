@@ -1,24 +1,20 @@
 <div class="col-md-3">
-                <p class="lead">Activities3</p>
-				<!-- {{getActivities}} -->
+                <p class="lead">List of Activities</p>
                 <div class="list-group">
 				
 					<table id="fullMenu" class="table">
 
 						<tbody>
 								 <tr ng-repeat="x in getActivities">
-									 <td>{{x.response.venue.name}}</td>
+									 <td>{{x.name}}</td>
 
-									 <td><button ng-click="deleteDish(x.id)">x</button></td>
+									 <td><button ng-click="deletePlace(x)" class="btn btn-danger">x</button></td>
 
 								 </tr>
 						</tbody>
 					</table>
-					<a href="#!/menu" class="btn btn-primary">Confirm Activities</a>
+					<a href="#!/activities" class="btn btn-primary" ng-show="getActivities.length > 0">Confirm Activities</a>
 				
-                    <!-- <a href="#" class="list-group-item">Activity 1</a>
-                    <a href="#" class="list-group-item">Activity 2</a>
-                    <a href="#" class="list-group-item">Activity 3</a> -->
+
                 </div>
             </div>
-			<!-- {{getActivities}} -->

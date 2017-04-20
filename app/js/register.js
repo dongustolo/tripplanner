@@ -1,15 +1,6 @@
-'use restrict';
 
-angular.module('webApp.register', ['ngRoute', 'firebase'])
 
-.config(['$routeProvider', function($routeProvider){
-	$routeProvider.when('/register', {
-		templateUrl: 'register/register.html',
-		controller: 'RegisterCtrl'
-	});
-}])
-
-.controller('RegisterCtrl', ['$scope', '$firebaseAuth', '$location', function($scope, $firebaseAuth, $location){
+tripPlannerApp.controller('RegisterCtrl', ['$scope', '$firebaseAuth', '$location', function($scope, $firebaseAuth, $location){
 
 	$scope.signUp = function(){
 		var username = $scope.user.email;

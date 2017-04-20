@@ -1,30 +1,33 @@
-'use strict';
+
 
 // Declare app level module which depends on views, and components
 var tripPlannerApp = angular.module('webApp', [
   'ngRoute',
   'ngResource',
-  'firebase',
-  'webApp.home',
-  'webApp.register'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-	$routeProvider.
-		when('/welcome',{
-		templateUrl: 'partials/search.html',
-		controller: 'WelcomeCtrl'
+  'firebase'  
+]);
+tripPlannerApp.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+
+  $routeProvider.
+	when('/home', {
+		templateUrl: 'partials/home.html',
+		controller: 'HomeCtrl'
 	}).
-	when('/dish/:dishId', {
-        templateUrl: 'partials/dish.html',
-        controller: 'DishCtrl'
-     }).
+	when('/welcome',{
+		templateUrl: 'partials/search.html',
+		controller: 'searchCtrl'
+	}).
 	when('/place/:placeId', {
 		templateUrl: 'partials/place.html',
 		controller: 'placeCtrl'
 	}).
-	when('/addPost', {
-		templateUrl: 'addPost/addPost.html',
-		controller: 'AddPostCtrl'
+	when('/register', {
+		templateUrl: 'partials/register.html',
+		controller: 'RegisterCtrl'
 	}).
-	otherwise({redirectTo: '/home'});
+	when('/activities', {
+		templateUrl: 'partials/activities.html',
+		controller: 'tripCtrl'
+	})
+  .otherwise({redirectTo: '/home'});
 }]);

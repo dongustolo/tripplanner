@@ -1,15 +1,6 @@
-'use strict';
 
-angular.module('webApp.home', ['ngRoute', 'firebase'])
 
-.config(['$routeProvider', function($routeProvider){
-	$routeProvider.when('/home', {
-		templateUrl: 'home/home.html',
-		controller: 'HomeCtrl'
-	});
-}])
-
-.controller('HomeCtrl', ['$scope', '$firebaseAuth', '$location', 'CommonProp', function($scope, $firebaseAuth, $location, CommonProp){
+tripPlannerApp.controller('HomeCtrl', ['$scope', '$firebaseAuth', '$location', 'CommonProp', function($scope, $firebaseAuth, $location, CommonProp){
 
 	$scope.username = CommonProp.getUser();
 
@@ -28,13 +19,14 @@ angular.module('webApp.home', ['ngRoute', 'firebase'])
 			$location.path('/welcome');
 		}).catch(function(error){
 			$scope.errMsg = true;
+			$console.log("entre");
 			$scope.errorMessage = error.message;
 		});
 	}
 
-}])
+}]);
 
-.service('CommonProp', ['$location', '$firebaseAuth', function($location, $firebaseAuth){
+tripPlannerApp.service('CommonProp', ['$location', '$firebaseAuth', function($location, $firebaseAuth){
 	var user = "";
 	var auth = $firebaseAuth();
 

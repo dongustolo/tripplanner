@@ -1,4 +1,5 @@
 
+
 tripPlannerApp.controller('AddPostCtrl', ['$scope', '$firebaseArray', '$location', 'CommonProp', function($scope, $firebaseArray, $location, CommonProp){
 
 	$scope.username = CommonProp.getUser();

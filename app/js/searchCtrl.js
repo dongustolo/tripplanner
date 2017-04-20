@@ -1,8 +1,12 @@
 
 
-tripPlannerApp.controller('WelcomeCtrl', function($scope, CommonProp, $firebaseArray, $firebaseObject, $location, Trip){
-	
+tripPlannerApp.controller('searchCtrl', function($scope, CommonProp, $firebaseArray, $firebaseObject, $location, Trip){
+	$scope.username = CommonProp.getUser();
 
+	if(!$scope.username){
+		$location.path('/home');
+	}
+	console.log("aqui");
 	
 	$scope.lugares = Trip.PlaceSearch.get({});
 	
@@ -15,19 +19,11 @@ tripPlannerApp.controller('WelcomeCtrl', function($scope, CommonProp, $firebaseA
 		},function(data){
 		$scope.status = "There was an error";
 		});
-	};
+	}; 
 	
-	$scope.username = CommonProp.getUser();
-
-	if(!$scope.username){
-		$location.path('/home');
-	}
-
 	var ref = firebase.database().ref().child('Articles');
 	$scope.articles = $firebaseArray(ref);	
 
-	$scope.testeo = "HOLA";
-	
 	$scope.editPost = function(id){
 		var ref = firebase.database().ref().child('Articles/' + id);
 		$scope.editPostData = $firebaseObject(ref);

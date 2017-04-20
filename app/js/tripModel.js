@@ -1,4 +1,4 @@
-tripPlannerApp.factory('Trip',function ($resource) {
+tripPlannerApp.factory('Trip',function ($resource, $http) {
 	
 	var selectedPlaces = [];
 	var selectedPlacesIds = [];
@@ -6,17 +6,29 @@ tripPlannerApp.factory('Trip',function ($resource) {
 	this.PlaceSearch = $resource('https://api.foursquare.com/v2/venues/search',{},{
 	  get: {
 		  headers: { },
-		  params:{ categoryId:'4bf58dd8d48988d1e2941735',limit:'12',near:'Rio de Janeiro',oauth_token:'MMQS314RF13CC5N0OO4W3CFJ0BQL24ZB10D1XZHZUTJBXOTV', v:'20170416'}
+		  params:{ categoryId:'4bf58dd8d48988d1e2941735',limit:'18',near:'Rio de Janeiro',oauth_token:'MMQS314RF13CC5N0OO4W3CFJ0BQL24ZB10D1XZHZUTJBXOTV', v:'20170416'}
 	  }
 	});
 
-	this.PlaceId = $resource('https://api.foursquare.com/v2/venues/:id',{},{
+	/* this.PlaceId = $resource('https://api.foursquare.com/v2/venues/:id',{},{
 	  get: {
 		  headers: { },
 		  params:{oauth_token:'MMQS314RF13CC5N0OO4W3CFJ0BQL24ZB10D1XZHZUTJBXOTV', v:'20170416'}
 
 	  }
-	});
+	}); */
+	
+	this.PlaceId = function(id) {
+      var params = {
+          url: "https://api.foursquare.com/v2/venues/" + id ,
+          headers: { },
+		  params:{oauth_token:'MMQS314RF13CC5N0OO4W3CFJ0BQL24ZB10D1XZHZUTJBXOTV', v:'20170416'}
+      };
+      return $http(params).then(function(response){
+        return response.data;
+      });
+  }
+
 	
 	this.getActivitiesList = function(){
       return selectedPlaces;

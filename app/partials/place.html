@@ -1,6 +1,5 @@
 <ng-include src="'partials/header.html'"></ng-include>
-<!-- {{status}}
-Results: {{place.response}} -->
+{{status}}
 
 <!-- <ul>
   <li ng-repeat="x in place.response.venue.photos.groups[0].items">
@@ -46,22 +45,6 @@ Results: {{place.response}} -->
                     </div>
 
                 </div> -->
-
-                <!-- <div class="row search-bar">
-                  <div class="col-sm-12 col-lg-12 col-md-12">
-                    <div class="col-sm-6">
-        							<input type="text" id="dishFilterInput" ng-model="query" />
-        							<button id="dishFilterButton" ng-click="search(query, type)">Search</button>
-        						</div>
-        						<div class="col-sm-6">
-                      Categories:
-        							<select name="dishType" id="dishType" ng-model="category" ng-change="searchPlaces(category)">
-                        <option value="4bf58dd8d48988d1e2941735">Beaches</option>
-  											<option value="4bf58dd8d48988d1fa931735">Hotels</option>
-        							</select>
-        						</div>
-                  </div>
-                </div> -->
 				
                 <div class="row">
 				
@@ -69,7 +52,7 @@ Results: {{place.response}} -->
 						<img ng-src="{{place.response.venue.photos.groups[0].items[0].prefix}}500x300{{place.response.venue.photos.groups[0].items[0].suffix}}" />
                         <h1>{{place.response.venue.name}}</h1>
 						<h2>Address: {{place.response.venue.location.address}}</h2>
-						<button ng-click="addActivity(place)">Add Activity</button>
+						<button ng-click="addActivity(place)" class="btn btn-default">Add Activity</button>
                     </div>
 
 
@@ -84,4 +67,3 @@ Results: {{place.response}} -->
 
 <ng-include src="'partials/footer.html'"></ng-include>
 
-Testeo: {{lugares.response.venues}}
