@@ -19,7 +19,6 @@ tripPlannerApp.controller('HomeCtrl', ['$scope', '$firebaseAuth', '$location', '
 			$location.path('/welcome');
 		}).catch(function(error){
 			$scope.errMsg = true;
-			$console.log("entre");
 			$scope.errorMessage = error.message;
 		});
 	}

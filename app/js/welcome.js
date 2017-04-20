@@ -6,7 +6,7 @@ tripPlannerApp.controller('WelcomeCtrl', ['$scope', 'CommonProp', '$firebaseArra
 	if(!$scope.username){
 		$location.path('/home');
 	}
-	console.log("aqui");
+
 	var ref = firebase.database().ref().child('Articles');
 	$scope.articles = $firebaseArray(ref);	
 

@@ -43,12 +43,12 @@
                 <div class="row search-bar">
                   <div class="col-sm-12 col-lg-12 col-md-12">
                     <div class="col-sm-6">
-        							<input type="text" id="dishFilterInput" ng-model="query" />
-        							<button id="dishFilterButton" ng-click="searchPlaces(query, category)">Search</button>
+        							<input type="text" ng-model="query" />
+        							<button ng-click="searchPlaces(query, category)">Search</button>
         						</div>
         						<div class="col-sm-6">
                       Categories:
-        							<select name="dishType" id="dishType" ng-model="category" ng-change="searchPlaces(query, category)">
+        							<select ng-model="category" ng-change="searchPlaces(query, category)">
 										<option value="4bf58dd8d48988d1e2941735">Beaches</option>
 										<option value="4bf58dd8d48988d1e5931735">Music Venues</option>
 										<option value="4bf58dd8d48988d181941735">Museums</option>

@@ -1,12 +1,10 @@
 
-
 tripPlannerApp.controller('searchCtrl', function($scope, CommonProp, $firebaseArray, $firebaseObject, $location, Trip){
 	$scope.username = CommonProp.getUser();
 
 	if(!$scope.username){
 		$location.path('/home');
 	}
-	console.log("aqui");
 	
 	$scope.lugares = Trip.PlaceSearch.get({});
 	
@@ -14,7 +12,7 @@ tripPlannerApp.controller('searchCtrl', function($scope, CommonProp, $firebaseAr
 		$scope.status = "Searching...";
 		Trip.PlaceSearch.get({query:query, categoryId:category},function(data){
 			$scope.lugares=data;
-			//$scope.status = "Showing " + data.results.length + " results";
+
 			$scope.status = "";
 		},function(data){
 		$scope.status = "There was an error";

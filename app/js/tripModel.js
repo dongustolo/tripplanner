@@ -10,6 +10,7 @@ tripPlannerApp.factory('Trip',function ($resource, $http) {
 	  }
 	});
 
+	// $resource method. I prefer to use the $http version
 	/* this.PlaceId = $resource('https://api.foursquare.com/v2/venues/:id',{},{
 	  get: {
 		  headers: { },
@@ -29,25 +30,7 @@ tripPlannerApp.factory('Trip',function ($resource, $http) {
       });
   }
 
-	
-	this.getActivitiesList = function(){
-      return selectedPlaces;
-    }
-	
-	this.addActivitytoList = function(place) {
 
-		selectedPlaces.push(place);
-        console.log(selectedPlaces);
-/*         selectedDishesIds = [];
-		for (var j = 0; j < selectedDishes.length; j++) {
-			//console.log(selectedDishes[j]);
-			selectedDishesIds.push(selectedDishes[j].id);
-		}
-		$cookieStore.put('selectedDishesIds', selectedDishesIds); */
-        //console.log(selectedDishesIds);
-        //console.log($cookieStore.get('selectedDishesIds'));
-
-	};
 	
 	return this;
 })

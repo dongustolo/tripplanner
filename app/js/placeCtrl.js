@@ -5,9 +5,7 @@ tripPlannerApp.controller('placeCtrl', function($scope, $http, CommonProp, $fire
 	if(!$scope.username){
 		$location.path('/home');
 	}
-	
-	//$scope.place  = Trip.PlaceId.get({id:$routeParams.placeId});
-	//$scope.place  = Trip.PlaceId('4d31a7c96c7c721e66f9a756');
+
     
 	Trip.PlaceId($routeParams.placeId).then(function(data){
 
@@ -28,11 +26,6 @@ tripPlannerApp.controller('placeCtrl', function($scope, $http, CommonProp, $fire
 	$scope.places = $firebaseArray(ref);
 	
 	
-	/* $scope.addActivity = function(place){
-		Trip.addActivitytoList(place);
-		console.log("entre");
-	}; */
-	
 	$scope.addActivity = function(){
 		var name = $scope.name;
 		var id = $scope.id;
@@ -48,7 +41,6 @@ tripPlannerApp.controller('placeCtrl', function($scope, $http, CommonProp, $fire
 			prefix: prefix,
 			suffix: suffix
 		}).then(function(ref){
-			console.log(ref);
 			$scope.success = true;
 			window.setTimeout(function() {
 				$scope.$apply(function(){

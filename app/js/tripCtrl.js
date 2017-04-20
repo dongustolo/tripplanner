@@ -16,4 +16,8 @@ tripPlannerApp.controller('tripCtrl', function($scope, CommonProp, $firebaseArra
 		$scope.getActivities.$remove(place);
 	};
 	
+	$scope.logout = function(){
+		CommonProp.logoutUser();
+	}
+	
 });
